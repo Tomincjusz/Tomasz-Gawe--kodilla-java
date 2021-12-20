@@ -1,7 +1,7 @@
 package com.kodilla.testing;
 
-import com.kodilla.testing.user.SimpleUser;
 import com.kodilla.testing.calculator.Calculator;
+import com.kodilla.testing.user.SimpleUser;
 
 public class TestingMain {
 
@@ -23,13 +23,13 @@ public class TestingMain {
             System.out.println("test 1 is ok");
         }
         else {
-            System.out.println("Error");
+            System.out.println("test 1 Error");
         }
         if(result2 == 5) {
             System.out.println("test 2 is ok");
         }
         else {
-            System.out.println("Error");
+            System.out.println("test 2 Error");
         }
     }
 }
