@@ -1,11 +1,7 @@
 package com.kodilla.testing.shape;
 
 import org.junit.Assert;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
+import org.junit.jupiter.api.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +49,7 @@ public class ShapeCollectorTestSuite {
         boolean result = collector.addFigure(circle);
 
         //Then
-        Assert.assertTrue(result);
+        Assertions.assertFalse(result);
     }
 
     @Test
@@ -68,7 +64,7 @@ public class ShapeCollectorTestSuite {
         List<Shape> figures = collector.showFigures();
 
         //Then
-        Assert.assertTrue(result);
+        Assertions.assertFalse(result);
         Assert.assertEquals(null, figures);
     }
 
@@ -83,7 +79,7 @@ public class ShapeCollectorTestSuite {
         Shape result = collector.getFigure(0);
 
         //Then
-        Assert.assertEquals(square, result);
+        Assertions.assertEquals(square, result);
     }
 
     @Test
