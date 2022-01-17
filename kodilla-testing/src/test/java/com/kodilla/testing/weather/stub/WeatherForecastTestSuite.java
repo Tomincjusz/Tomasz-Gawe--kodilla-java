@@ -3,7 +3,7 @@ package com.kodilla.testing.weather.stub;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class WeatherForecastTestSuite {
+class WeatherForecastTestSuite {
 
     @Test
     void testCalculateForecastWithStub() {

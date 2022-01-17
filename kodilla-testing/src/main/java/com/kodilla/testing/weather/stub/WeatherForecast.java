@@ -3,10 +3,10 @@ package com.kodilla.testing.weather.stub;
 import java.util.*;
 
 public class WeatherForecast {
-
     private Temperatures temperatures;
 
     public WeatherForecast(Temperatures temperatures) {
+
         this.temperatures = temperatures;
     }
 
@@ -21,8 +21,7 @@ public class WeatherForecast {
         }
         return resultMap;
     }
-
-    public double AverageTemp(){
+    public double averageTemp(){
         double i = 0.0;
         double result = 0.0;
         for (Map.Entry<String, Double> temperature :
@@ -34,7 +33,7 @@ public class WeatherForecast {
         return result / i;
     }
 
-    public double MedianTemp(){
+    public double medianTemp(){
         double median = 0.0;
         List<Double> temperatureList = new ArrayList<>();
         for (Map.Entry<String, Double> temperature : temperatures.getTemperatures().entrySet()) {

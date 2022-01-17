@@ -13,7 +13,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -23,15 +22,16 @@ public class WeatherForecastTestSuite {
     private Temperatures temperaturesMock;
 
     @BeforeEach
-        void generateMockForTests() {
-            Map<String, Double> temperaturesMap = new HashMap<>();
-            temperaturesMap.put("Rzeszow", 25.5);
-            temperaturesMap.put("Krakow", 26.2);
-            temperaturesMap.put("Wroclaw", 24.8);
-            temperaturesMap.put("Warszawa", 25.2);
-            temperaturesMap.put("Gdansk", 26.1);
-            when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
-        }
+    void generateMockForTests() {
+        Map<String, Double> temperaturesMap = new HashMap<>();
+        temperaturesMap.put("Rzeszow", 25.5);
+        temperaturesMap.put("Krakow", 26.2);
+        temperaturesMap.put("Wroclaw", 24.8);
+        temperaturesMap.put("Warszawa", 25.2);
+        temperaturesMap.put("Gdansk", 26.1);
+        when(temperaturesMock.getTemperatures()).thenReturn(temperaturesMap);
+    }
+
     @Test
     void testCalculateForecastWithMock() {
         //Given
@@ -43,6 +43,7 @@ public class WeatherForecastTestSuite {
         //Then
         Assertions.assertEquals(5, quantityOfSensors);
     }
+
     @Test
     void testCalcAverageTemp() {
 
@@ -50,11 +51,12 @@ public class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        double average = weatherForecast.AverageTemp();
+        double average = weatherForecast.averageTemp();
 
         //Then
         Assertions.assertEquals(25.56, average);
     }
+
     @Nested
     class testsCalcMedianTemp {
 
@@ -65,11 +67,12 @@ public class WeatherForecastTestSuite {
             WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
             //When
-            double median = weatherForecast.MedianTemp();
+            double median = weatherForecast.medianTemp();
 
             //Then
             Assertions.assertEquals(25.5, median);
         }
+
         @Test
         void testcalcMedianTempEven() {
 
@@ -84,12 +87,10 @@ public class WeatherForecastTestSuite {
             WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
             //When
-            double median = weatherForecast.MedianTemp();
+            double median = weatherForecast.medianTemp();
 
             //Then
             Assertions.assertEquals(25.35, median);
         }
     }
-
-
 }

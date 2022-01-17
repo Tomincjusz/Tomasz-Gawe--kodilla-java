@@ -18,5 +18,4 @@ public class TemperaturesStub implements Temperatures {
 
         return stubResult;
     }
-
 }
