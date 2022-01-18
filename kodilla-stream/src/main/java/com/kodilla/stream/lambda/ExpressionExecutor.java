@@ -1,7 +1,5 @@
 package com.kodilla.stream.lambda;
 
-import com.kodilla.stream.MathExpression;
-
 public class ExpressionExecutor {
 
     public void executeExpression(double a, double b, MathExpression mathExpression)
