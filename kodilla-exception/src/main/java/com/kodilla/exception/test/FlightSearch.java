@@ -14,7 +14,7 @@ public class FlightSearch {
 
         if (airportsMap.containsKey(arrives)) {
             Boolean ifAvaiable = airportsMap.get(arrives);
-            if (ifAvaiable != true) {
+            if (!ifAvaiable) {
                 System.out.println("The airport " + arrives + " exist, but is not avaiable for the moment");
             } else {
                 System.out.println("Have a nice flight to " + arrives);
