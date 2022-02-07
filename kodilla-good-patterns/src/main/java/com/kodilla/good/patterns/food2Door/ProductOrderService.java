@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.food2Door;
 
 import java.util.List;
+import java.util.Objects;
 
 public class ProductOrderService implements OrderService {
     @Override
@@ -14,9 +15,9 @@ public class ProductOrderService implements OrderService {
 
         for (OrderRequest order: orderedList) {
             String provider = order.getProvider();
-            if (provider == "Extra Food Shop") {
+            if (Objects.equals(provider, "Extra Food Shop")) {
                 extraFoodShop.process(order);
-            } else if (provider == "Gluten Free Shop") {
+            } else if (Objects.equals(provider, "Gluten Free Shop")) {
                 glutenFreeShop.process(order);
             } else {
                 healthyShop.process(order);

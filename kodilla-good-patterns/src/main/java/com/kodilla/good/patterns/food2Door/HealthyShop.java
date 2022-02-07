@@ -2,6 +2,7 @@ package com.kodilla.good.patterns.food2Door;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class HealthyShop implements Provider {
     private String providerName;
@@ -55,7 +56,7 @@ public class HealthyShop implements Provider {
     private boolean checkAvailability(OrderRequest order) {
         Boolean itemFound = false;
         for (Product product : warehouseProductList) {
-            if (product.productType == order.getProductType())
+            if (Objects.equals(product.productType, order.getProductType()))
                 if (order.getQuantity() <= product.getQuantity())
                     itemFound = true;
         }

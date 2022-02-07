@@ -2,6 +2,7 @@ package com.kodilla.good.patterns.food2Door;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class GlutenFreeShop implements Provider {
     private String providerName;
@@ -68,7 +69,7 @@ public class GlutenFreeShop implements Provider {
 
     private void decreaseStock(OrderRequest order) {
         for (Product product : warehouseProductList) {
-            if (product.getProductType() == order.getProductType()) {
+            if (Objects.equals(product.getProductType(), order.getProductType())) {
                 product = new Product(product.getProductSerialNo(), product.getQuantity()- order.getQuantity(), product.getProductType());
                 System.out.println("Quantity of: " + product.getProductType() + " reduced to " + product.getQuantity());
             }
