@@ -14,7 +14,7 @@ public class FlightsSearchingService implements SearchingService {
         for (Map.Entry<String, String> entry : searchedCitiesList.entrySet()) {
             String airport = entry.getValue();
 
-            if (entry.getKey() == "from") {
+            if (Objects.equals(entry.getKey(), "from")) {
                 System.out.println("Searched city: " + airport + "\n");
                 System.out.println("Possible destinations from " + airport + " are: ");
                 searchFrom(airport);

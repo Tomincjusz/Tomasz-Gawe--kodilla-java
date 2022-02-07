@@ -1,6 +1,5 @@
 package com.kodilla.good.patterns.flights.Flights;
 
-import com.kodilla.good.patterns.flights.airports.Airport;
 import com.kodilla.good.patterns.flights.airports.GDN;
 
 import java.util.HashMap;
