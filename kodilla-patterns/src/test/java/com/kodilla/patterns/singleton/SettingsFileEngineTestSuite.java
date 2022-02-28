@@ -8,11 +8,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class SettingFileEngineTestSuite {
 
-    private static SettingsFileEngine settingsFileEngine;
+    private static SettingFileEngine settingsFileEngine;
 
     @BeforeAll
     public static void openSettingsFile() {
-        settingsFileEngine = SettingsFileEngine.INSTANCE;
+        settingsFileEngine = SettingFileEngine.INSTANCE;
         settingsFileEngine.open("myapp.settings");
     }
 
