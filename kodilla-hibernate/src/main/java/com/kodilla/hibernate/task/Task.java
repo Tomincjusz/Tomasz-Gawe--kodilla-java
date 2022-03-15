@@ -1,8 +1,7 @@
 package com.kodilla.hibernate.task;
 
-import com.kodilla.hibernate.tasklist.TaskList;
-import com.sun.istack.NotNull;
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
@@ -61,11 +60,5 @@ public final class Task {
 
     private void setDuration(int duration) {
         this.duration = duration;
-    }
-
-    public <TaskFinancialDetails> void setTaskFinancialDetails(TaskFinancialDetails tfd) {
-    }
-
-    public void setTaskList(TaskList taskList) {
     }
 }

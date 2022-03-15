@@ -8,7 +8,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
-class TaskListDaoTestSuite {
+public class TaskListDaoTestSuite {
 
     @Autowired
     private TaskListDao taskListDao;
