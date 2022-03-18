@@ -132,7 +132,7 @@ public class ForumStatisticsTestSuite {
             ForumStatistics forumStatistics = new ForumStatistics(statisticsMock);
             List<String> listOfUsers = generateListOfUsers(10);
             int postsNo = generateNumberOfPosts(10);
-            int commentsNo = generateNumberOfCommnets(20);
+            int commentsNo = generateNumberOfCommnets(15);
 
             when(statisticsMock.userNames()).thenReturn(listOfUsers);
             when(statisticsMock.postsCount()).thenReturn(postsNo);
@@ -143,8 +143,8 @@ public class ForumStatisticsTestSuite {
 
             //Then
             assertEquals(1.0, forumStatistics.getAvgPostsPerUser());
-            assertEquals(2.0, forumStatistics.getAvgCommentsPerUser());
-            assertEquals(2.0, forumStatistics.getAvgCommentsPerPost());
+            assertEquals(1.5, forumStatistics.getAvgCommentsPerUser());
+            assertEquals(1.5, forumStatistics.getAvgCommentsPerPost());
         }
 
         @Test
