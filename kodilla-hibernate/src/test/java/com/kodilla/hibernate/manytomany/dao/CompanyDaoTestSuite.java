@@ -5,7 +5,6 @@ import com.kodilla.hibernate.manytomany.Employee;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -56,13 +55,13 @@ class CompanyDaoTestSuite {
         assertNotEquals(0, greyMatterId);
 
         //CleanUp
-        //try {
-        //    companyDao.deleteById(softwareMachineId);
-        //    companyDao.deleteById(dataMaestersId);
-        //    companyDao.deleteById(greyMatterId);
-        //} catch (Exception e) {
-        //    //do nothing
-        //}
+        try {
+            companyDao.deleteById(softwareMachineId);
+            companyDao.deleteById(dataMaestersId);
+            companyDao.deleteById(greyMatterId);
+        } catch (Exception e) {
+            //do nothing
+        }
     }
 
     @Test
@@ -96,7 +95,7 @@ class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
         int greyMatterId = greyMatter.getId();
 
-        List<Company> companiesStartsWithGivenString = companyDao.retrieveCompaniesStartsWith("dat");
+        List <Company> companiesStartsWithGivenString = companyDao.retrieveCompaniesStartsWith("dat");
         List <Employee> employeesWithGivenLastName = employeeDao.retrieveEmployeesWithNameEqualsTo("Smith");
 
         //Then
